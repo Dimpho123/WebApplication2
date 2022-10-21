@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApplication2.Models.Disaster>
+
+@{
+    ViewData["Title"] = "DisasterCapture";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DisasterCapture</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Disaster_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aid_Types)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disaster_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aid_Types)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

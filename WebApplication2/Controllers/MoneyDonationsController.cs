@@ -18,10 +18,7 @@ namespace WebApplication2.Controllers
         {
             _dd = dd;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
         public IActionResult Moneyd()
         {
             return View();
@@ -32,9 +29,14 @@ namespace WebApplication2.Controllers
         public IActionResult Moneyd(Money m)
         {
             _dd.Add(m);
-            //_dd.SaveChanges();
+            _dd.SaveChanges();
             ViewBag.message = "The record" + m.Amount + " saved successfully";
             return View();
+        }
+        [HttpGet]
+        public IActionResult MoneyCaptured()
+        {
+            return View(_dd.Moneyd.ToList());
         }
     }
 }

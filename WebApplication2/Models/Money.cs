@@ -10,12 +10,17 @@ namespace WebApplication2.Models
 {
     public class Money
     {
+        //Adding Variables
         [Key]
-        public int money_id { get; set; }
+        public string money_id { get; set; }
         [Required]
         public DateTime date { get; set; }
         [Required]
         public string Amount { get; set; }
-     
+        public IEnumerator<Money> GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
     }
 }

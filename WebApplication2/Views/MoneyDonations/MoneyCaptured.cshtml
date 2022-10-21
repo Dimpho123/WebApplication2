@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication2.Models.Money>
+
+@{
+    ViewData["Title"] = "MoneyCaptured";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MoneyCaptured</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.money_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.money_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+        
+        </tr>
+}
+    </tbody>
+</table>

@@ -11,15 +11,19 @@ namespace WebApplication2.Models
     {
         [Key]
         public int Disaster_ID { get; set; }
-        [Required]
+     
         public DateTime StartDATE { get; set; }
-        [Required]
+      
         public DateTime EndDATE { get; set; }
-        [Required]
+        
         public string Location { get; set; }
-        [Required]
+     
         public string Description { get; set; }
-        [Required]
+      
         public string Aid_Types { get; set; }
+        public IEnumerator<Disaster> GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

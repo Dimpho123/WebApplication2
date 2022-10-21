@@ -12,16 +12,16 @@ namespace WebApplication2.Controllers
 {
     public class GoodsDonationsController : Controller
     {
+
+        
         private readonly Connections _dd;
 
         public GoodsDonationsController(Connections dd)
         {
             _dd = dd;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+
+        
         public IActionResult Goodsd()
         {
             return View();
@@ -32,9 +32,14 @@ namespace WebApplication2.Controllers
         public IActionResult Goodsd(Goods g)
         {
             _dd.Add(g);
-            //_dd.SaveChanges();
-            ViewBag.message = "The record" + g.Category + "saved successfully";
+            _dd.SaveChanges();
+            ViewBag.message = "The record" + g.Description_of_each_item + "saved successfully";
             return View();
+        }
+        [HttpGet]
+        public IActionResult GoodsCaptured()
+        {
+            return View(_dd.Goodsd.ToList());
         }
     }
 }

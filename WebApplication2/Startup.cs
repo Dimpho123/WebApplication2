@@ -28,6 +28,7 @@ namespace WebApplication2
         {
             services.AddDbContext<Connections>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +55,7 @@ namespace WebApplication2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=login}/{id?}");
             });
         }
     }
